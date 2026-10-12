@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "jupyter": {
+      "command": ".venv-mcp/Scripts/python.exe",
+      "args": ["-m", "jupyter_mcp_server"],
+      "env": {
+        "ALLOW_IMG_OUTPUT": "true"
+      }
+    }
+  }
+}

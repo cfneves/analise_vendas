@@ -1,0 +1,16 @@
+# Lado Jupyter — versões alinhadas com o que o Jupyter MCP espera.
+# A real-time collaboration (jupyter-collaboration + pycrdt) é o que
+# permite o MCP enxergar o notebook ao vivo.
+jupyterlab==4.4.1
+jupyter-collaboration==4.0.2
+jupyter-mcp-tools>=0.1.4
+ipykernel
+pycrdt
+
+# Lado análise de dados
+pandas
+matplotlib
+
+# Lado dashboard
+streamlit
+plotly

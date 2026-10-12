@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --no-project scripts/stop.py"
+          }
+        ]
+      }
+    ]
+  }
+}

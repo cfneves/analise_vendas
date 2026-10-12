@@ -1,0 +1,4 @@
+/* styles/theme.css — polimento leve, sem cor fixa (deixa o tema nativo do Streamlit decidir fundo/texto) */
+h1, h2, h3 { letter-spacing: -0.01em; }
+[data-testid="stMetricValue"] { font-weight: 600; }
+[data-testid="stSidebar"] { padding-top: 1rem; }

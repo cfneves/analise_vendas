@@ -1,0 +1,14 @@
+# Ambiente e artefatos de runtime (gerados pelo bootstrap)
+.venv/
+.venv-mcp/
+.runtime/
+
+# Jupyter / Python
+.ipynb_checkpoints/
+.jupyter/
+.jupyter_ystore.db
+__pycache__/
+*.pyc
+
+# SDD/superpowers scratch (git-ignored por design das skills)
+.superpowers/
