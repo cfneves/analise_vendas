@@ -10,6 +10,7 @@ def renderizar(df) -> "pd.DataFrame":
     periodo = st.sidebar.date_input(
         "Período", value=(data_min, data_max),
         min_value=data_min, max_value=data_max, key="filtro_periodo",
+        format="DD/MM/YYYY",
     )
     data_inicio, data_fim = periodo if len(periodo) == 2 else (data_min, data_max)
 

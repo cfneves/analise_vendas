@@ -1,4 +1,70 @@
-/* styles/theme.css — polimento leve, sem cor fixa (deixa o tema nativo do Streamlit decidir fundo/texto) */
-h1, h2, h3 { letter-spacing: -0.01em; }
-[data-testid="stMetricValue"] { font-weight: 600; }
+/* styles/theme.css — design system do dashboard.
+   Tokens neutros (cinza-médio com baixa opacidade) em vez de depender da
+   preferência do sistema operacional: o tema padrão do app é escuro
+   (.streamlit/config.toml), mas o viewer pode trocar pra claro no menu do
+   Streamlit, e esses valores funcionam razoavelmente nos dois sem precisar
+   de @media (que segue o SO, não a escolha feita dentro do app). */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --cor-primaria: #0072B2;
+  --cor-texto-secundario: #94A3B8;
+  --cor-borda: rgba(148, 163, 184, 0.25);
+  --fundo-card: rgba(148, 163, 184, 0.06);
+  --sombra-card: none;
+  --raio-card: 14px;
+}
+
+html, body, [class^="st-"], [class*=" st-"] {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+h1, h2, h3 { letter-spacing: -0.01em; font-weight: 700; }
+
+.block-container { padding-top: 2.5rem; max-width: 1200px; }
+
+/* Sidebar */
 [data-testid="stSidebar"] { padding-top: 1rem; }
+.marca-sidebar {
+  padding: 0 0.25rem 1rem 0.25rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--cor-borda);
+}
+.marca-sidebar .titulo {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--cor-primaria);
+}
+.marca-sidebar .subtitulo {
+  font-size: 0.78rem;
+  color: var(--cor-texto-secundario);
+}
+
+/* KPIs como cartão */
+[data-testid="stMetric"] {
+  background: var(--fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-card);
+  padding: 1rem 1.1rem;
+}
+[data-testid="stMetricLabel"] {
+  font-size: 0.75rem;
+  color: var(--cor-texto-secundario);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+[data-testid="stMetricValue"] {
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  font-weight: 700;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  line-height: 1.25;
+}
+
+/* Seções (containers com borda) viram cartão com sombra sutil */
+[data-testid="stVerticalBlockBorderWrapper"] {
+  border-radius: var(--raio-card) !important;
+  box-shadow: var(--sombra-card);
+}
